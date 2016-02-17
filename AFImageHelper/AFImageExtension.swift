@@ -506,8 +506,10 @@ public extension UIImage {
         // From Cache
         if shouldCacheImage {
             if UIImage.sharedCache().objectForKey(url) != nil {
-                closure(image: nil)
-                return UIImage.sharedCache().objectForKey(url) as! UIImage!
+                /* KARMA HACK */
+                let image = UIImage.sharedCache().objectForKey(url) as! UIImage!
+                closure(image: image)
+                return image
             }
         }
         // Fetch Image
