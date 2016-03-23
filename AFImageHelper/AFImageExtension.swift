@@ -24,7 +24,7 @@ public extension UIImage {
     /**
      A singleton shared NSURL cache used for images from URL
      */
-    private class func sharedCache() -> NSCache!
+    public class func sharedCache() -> NSCache! /* Karma HACK */
     {
         struct StaticSharedCache {
             static var sharedCache: NSCache? = nil
